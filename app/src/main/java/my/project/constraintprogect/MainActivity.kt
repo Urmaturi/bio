@@ -10,7 +10,6 @@ import androidx.databinding.DataBindingUtil
 import my.project.constraintprogect.databinding.MainActivityBinding
 
 
-
 class MainActivity : AppCompatActivity() {
     //private lateinit var bindings:   ActivityMainBinding
     private lateinit var bindings: MainActivityBinding
@@ -18,34 +17,30 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.main_activity)
-        bindings = DataBindingUtil.setContentView(this,R.layout.main_activity)
-       /*findViewById<Button>(R.id.button_done).setOnClickListener {
-            addNickname(it)
+        bindings = DataBindingUtil.setContentView(this, R.layout.main_activity)
+        /*findViewById<Button>(R.id.button_done).setOnClickListener {
+             addNickname(it)
 
-        }*/
-        bindings.buttonDone.setOnClickListener{addNickname(it)}
+         }*/
+        bindings.buttonDone.setOnClickListener { addNickname(it) }
     }
 
-    private fun addNickname(view: View)
-    {
+    private fun addNickname(view: View) {
         //val editText = findViewById<EditText>(R.id.name_adit)
         //val nicknameTextView = findViewById<TextView>(R.id.textViewNickName)
         // nicknameTextView.text = editText.text
-       //  editText.visibility = View.GONE
+        //  editText.visibility = View.GONE
         //nicknameTextView.visibility = View.VISIBLE
         bindings.apply {
-        bindings.textViewNickName.text = bindings.nameAdit.text
+            bindings.textViewNickName.text = bindings.nameAdit.text
             invalidateAll()
-        bindings.nameAdit.visibility = View.GONE
-        bindings.textViewNickName.visibility = View.VISIBLE
+            bindings.nameAdit.visibility = View.GONE
+            bindings.textViewNickName.visibility = View.VISIBLE
 
         }
 
 
-
     }
-
-
 
 
 }
